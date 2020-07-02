@@ -71,7 +71,7 @@ class Produccion(object):
 				print("se creo la tabla exitosamente")
 				total = len(self.mantos)
 				for index,manto in enumerate(self.mantos):
-					conexion.execute("insert into mantos(date,hour,number_manto) values (?,?,?)",
+					c.execute("insert into mantos(date,hour,number_manto) values (?,?,?)",
 									(manto.date, manto.hour, manto.number_manto))
 					prog = index * 100 / total
 					# Imprimimos en la consola el progreso del llenado de la base de dato
@@ -101,7 +101,7 @@ class Produccion(object):
 			c = conexion.cursor()
 			total = len(self.mantos)
 			for index,manto in enumerate(self.mantos):
-				conexion.execute("insert into mantos(date,hour,number_manto) values (?,?,?)",
+				c.execute("insert into mantos(date,hour,number_manto) values (?,?,?)",
 								(manto.date, manto.hour, manto.number_manto))
 				prog = index * 100 / total
 				# Imprimimos en la consola el progreso del llenado de la base de dato
